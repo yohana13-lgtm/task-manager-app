@@ -1,0 +1,93 @@
+/* frontend/src/components/TaskItem.css */
+.task-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .task-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .task-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .task-content {
+    flex: 1;
+  }
+  
+  .task-title {
+    font-size: 20px;
+    color: #1f2937;
+    margin-bottom: 8px;
+  }
+  
+  .task-description {
+    color: #6b7280;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  
+  .task-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .task-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  
+  .task-date {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .task-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn-icon {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-edit:hover {
+    background: #dbeafe;
+  }
+  
+  .btn-delete:hover {
+    background: #fee2e2;
+  }
+  
+  @media (max-width: 768px) {
+    .task-main {
+      flex-direction: column;
+    }
+    
+    .task-actions {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
