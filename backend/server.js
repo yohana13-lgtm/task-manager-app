@@ -1,8 +1,9 @@
 // backend/server.js
+require('dotenv').config({ path: './backend/.env' }); // HARUS paling atas
+
 const express = require('express');
 const cors = require('cors');
 const { sequelize } = require('./models');
-require('dotenv').config();
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.use(express.json());
 sequelize.authenticate()
   .then(() => {
     console.log('✅ SQLite Database Connected');
-    return sequelize.sync(); // Create tables if not exist
+    return sequelize.sync();
   })
   .then(() => {
     console.log('✅ Database Tables Synced');

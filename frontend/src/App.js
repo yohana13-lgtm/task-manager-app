@@ -3,6 +3,7 @@ import React, { useState, useEffect, createContext } from 'react';
 import './App.css';
 import AuthPage from './pages/AuthPage';
 import Dashboard from './pages/Dashboard';
+import { getCurrentUser } from './services/api';
 
 export const ThemeContext = createContext();
 
@@ -18,15 +19,28 @@ function App() {
     document.documentElement.setAttribute('data-theme', savedTheme);
   }, []);
 
-  // Check authentication
+  // Check authentication - validasi token ke backend setiap kali app dibuka
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    const userData = localStorage.getItem('user');
-    
-    if (token && userData) {
-      setUser(JSON.parse(userData));
-    }
-    setLoading(false);
+    const validateToken = async () => {
+      const token = localStorage.getItem('token');
+      const userData = localStorage.getItem('user');
+
+      if (token && userData) {
+        try {
+          // Cek ke backend apakah token masih valid
+          await getCurrentUser();
+          setUser(JSON.parse(userData));
+        } catch (error) {
+          // Token tidak valid atau expired → paksa login ulang
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
+          setUser(null);
+        }
+      }
+      setLoading(false);
+    };
+
+    validateToken();
   }, []);
 
   // Toggle theme
