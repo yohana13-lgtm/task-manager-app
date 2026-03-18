@@ -8,7 +8,13 @@ const { sequelize } = require('./models');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://task-manager-app-frontend.vercel.app' // nanti diupdate setelah dapat URL Vercel
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // Database Connection & Sync
