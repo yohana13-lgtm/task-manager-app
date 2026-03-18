@@ -18,6 +18,7 @@ function OverviewPage({ user }) {
 
   useEffect(() => {
     loadTasks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadTasks = async () => {
