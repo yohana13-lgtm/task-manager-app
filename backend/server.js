@@ -1,5 +1,5 @@
 // backend/server.js
-require('dotenv').config({ path: './backend/.env' }); // HARUS paling atas
+require('dotenv').config({ path: './backend/.env' });
 
 const express = require('express');
 const cors = require('cors');
@@ -11,7 +11,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://task-manager-app-frontend.vercel.app' // nanti diupdate setelah dapat URL Vercel
+    'https://task-manager-app-ten-taupe.vercel.app'
   ],
   credentials: true
 }));
