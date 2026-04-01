@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# 📋 Task Manager App - Codveda Project Internship (Level 3)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A professional, full-stack task management application built with **React**, **Express.js**, and **Sequelize**. This project features a robust authentication system and comprehensive task management capabilities, designed as part of the Codveda Project Internship Level 3.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **User Authentication**: Secure Login and Registration using JWT (JSON Web Tokens) and bcrypt password hashing.
+- **Task Management (CRUD)**: Create, Read, Update, and Delete tasks with ease.
+- **Rich Task Attributes**:
+  - **Status Tracking**: Pending, In-Progress, and Completed.
+  - **Priority Levels**: Low, Medium, and High.
+  - **Due Dates**: Keep track of deadlines.
+- **Responsive Dashboard**: An intuitive overview of your productivity and pending items.
+- **Modern UI/UX**: Clean design built with CSS and React 19.
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- **React 19**: Modern component-based architecture.
+- **React Scripts**: For optimized development and building.
+- **Vanilla CSS**: Custom-styled components for a unique aesthetic.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
+- **Node.js & Express 5**: Fast and minimalist backend framework.
+- **Sequelize ORM**: Promise-based Node.js ORM for SQLite.
+- **SQLite**: Lightweight, file-based database for easy setup.
+- **JWT & Bcrypt**: Industry-standard security for authentication.
 
-### `npm test`
+## 📦 Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```text
+task-manager-app/
+├── backend/            # Express.js Server & Sequelize Models
+│   ├── models/         # Task and User models
+│   ├── routes/         # API Endpoints
+│   ├── middleware/     # Auth & Security
+│   └── server.js       # Entry point
+├── frontend/           # React Application
+│   ├── src/
+│   │   ├── components/ # Reusable UI components
+│   │   ├── pages/      # Dashboard, Auth, and Tasks pages
+│   │   └── services/   # API communication logic
+└── package.json        # Project scripts and dependencies
+```
 
-### `npm run build`
+## ⚙️ Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd task-manager-app
+   ```
 
-### `npm run eject`
+2. **Install Root Dependencies**:
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Install Frontend Dependencies**:
+   ```bash
+   cd frontend && npm install && cd ..
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Environment Setup**:
+   Create a `.env` file in the `backend/` directory and add your configurations (e.g., `JWT_SECRET`).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Running the Application
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You can run both the frontend and backend concurrently from the root directory:
 
-## Learn More
+```bash
+npm run dev
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Frontend**: [http://localhost:3000](http://localhost:3000)
+- **Backend**: [http://localhost:5000](http://localhost:5000)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📝 License
 
-### Code Splitting
+This project is part of the Codveda Project Internship. All rights reserved.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
